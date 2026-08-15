@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/register_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="25dp">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:src="@drawable/sanketsetu_logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="SanketSetu Logo"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp" />
+
+        <!-- Register Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:background="@drawable/register_card"
+            android:elevation="7dp">
+
+            <!-- Heading -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Your Account"
+                android:textAlignment="center"
+                android:textColor="#3020B7"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="sans"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join SanketSetu and start your journey"
+                android:textAlignment="center"
+                android:textColor="#30366F"
+                android:textSize="17sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="22dp" />
+
+            <!-- Full Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_person"
+                    android:background="@drawable/icon_circle"
+                    android:contentDescription="Name" />
+
+                <EditText
+                    android:id="@+id/etFullName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Full Name"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#777777"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="15dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_email"
+                    android:background="@drawable/icon_circle"
+                    android:contentDescription="Email" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Email Address"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#777777"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="15dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Mobile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_phone"
+                    android:background="@drawable/icon_circle"
+                    android:contentDescription="Mobile" />
+
+                <EditText
+                    android:id="@+id/etMobile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Mobile Number"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#777777"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="15dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="8dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_lock"
+                    android:background="@drawable/icon_circle"
+                    android:contentDescription="Password" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Create Password"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#777777"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="15dp"
+                    android:singleLine="true" />
+
+                <ImageView
+                    android:id="@+id/ivPasswordEye"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_visibility_off"
+                    android:contentDescription="Show password" />
+            </LinearLayout>
+
+            <!-- Confirm Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="8dp"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_lock"
+                    android:background="@drawable/icon_circle"
+                    android:contentDescription="Confirm Password" />
+
+                <EditText
+                    android:id="@+id/etConfirmPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Confirm Password"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:textColorHint="#777777"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="15dp"
+                    android:singleLine="true" />
+
+                <ImageView
+                    android:id="@+id/ivConfirmEye"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_visibility_off"
+                    android:contentDescription="Show password" />
+            </LinearLayout>
+
+            <!-- Terms -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="16dp">
+
+                <CheckBox
+                    android:id="@+id/cbTerms"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:buttonTint="#4B20D4"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:id="@+id/tvTerms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="I agree to the Terms &amp; Conditions and Privacy Policy"
+                    android:textColor="#39227D"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Register Button -->
+            <LinearLayout
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/register_button"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_person_add"
+                    android:tint="@android:color/white"
+                    android:contentDescription="Register" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- OR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#DDDDDD" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  or register with  "
+                    android:textColor="#777777"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#DDDDDD" />
+            </LinearLayout>
+
+            <!-- Google + Phone -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="2dp">
+
+                <!-- Google -->
+                <LinearLayout
+                    android:id="@+id/btnGoogle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/social_button"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="7dp"
+                        android:src="@drawable/google_logo"
+                        android:contentDescription="Google" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Continue with Google"
+                        android:textColor="#303050"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="1dp" />
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:id="@+id/btnPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/social_button"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_phone"
+                        android:background="@drawable/icon_circle"
+                        android:contentDescription="Phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Continue with Phone"
+                        android:textColor="#303050"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Login -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? "
+                    android:textColor="#777777"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login Now"
+                    android:textColor="#4322C5"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

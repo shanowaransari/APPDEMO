@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Main soft background -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#F7F4FF"
+                android:centerColor="#FCFBFF"
+                android:endColor="#EEF7FF" />
+        </shape>
+    </item>
+
+    <!-- Top purple glow -->
+    <item
+        android:width="220dp"
+        android:height="180dp"
+        android:gravity="top|start">
+
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="180dp"
+                android:startColor="#DCD0FF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+
+    </item>
+
+    <!-- Top right blue glow -->
+    <item
+        android:width="230dp"
+        android:height="190dp"
+        android:gravity="top|end">
+
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="190dp"
+                android:startColor="#D7EAFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+
+    </item>
+
+    <!-- Bottom purple glow -->
+    <item
+        android:width="300dp"
+        android:height="220dp"
+        android:gravity="bottom|start">
+
+        <shape android:shape="oval">
+
+            <gradient
+                android:type="radial"
+                android:gradientRadius="240dp"
+                android:startColor="#C9B5FF"
+                android:endColor="#00FFFFFF" />
+
+        </shape>
+
+    </item>
+
+    <!-- Bottom blue glow -->
+    <item
+        android:width="300dp"
+        android:height="220dp"
+        android:gravity="bottom|end">
+
+        <shape android:shape="oval">
+
+            <gradient
+                android:type="radial"
+                android:gradientRadius="240dp"
+                android:startColor="#B8E1FF"
+                android:endColor="#00FFFFFF" />
+
+        </shape>
+
+    </item>
+
+</layer-list>

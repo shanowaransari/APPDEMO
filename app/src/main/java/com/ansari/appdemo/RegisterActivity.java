@@ -1,4 +1,4 @@
-package com.example.hiddenspot;
+package com.ansari.appdemo;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -190,7 +190,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     );
 
                     ivPasswordEye.setImageResource(
-                            R.drawable.ic_visibility
+                            R.drawable.on_eyes
                     );
 
                     passwordVisible = true;

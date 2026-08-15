@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/sanket_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Lock Circle -->
+        <LinearLayout
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:background="@drawable/forgot_icon_bg">
+
+            <ImageView
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:src="@drawable/forgotlogo"
+
+                />
+
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textColor="#172B4D"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't worry! Enter your username and&#10;create a new password."
+            android:textColor="#718096"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- White Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/forgot_card_bg"
+            android:elevation="5dp">
+
+            <!-- Username Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#172B4D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="7dp" />
+
+            <!-- Username -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:background="@drawable/input_bg">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_person"
+                    android:contentDescription="Username" />
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Enter username"
+                    android:textSize="15sp"
+                    android:textColor="#172B4D"
+                    android:textColorHint="#9AA5B1"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="12dp"
+                    android:singleLine="true"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <!-- New Password Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Password"
+                android:textColor="#172B4D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="7dp" />
+
+            <!-- New Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:background="@drawable/input_bg">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_lock"
+                    android:contentDescription="Password" />
+
+                <EditText
+                    android:id="@+id/etNewPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Enter new password"
+                    android:textSize="15sp"
+                    android:textColor="#172B4D"
+                    android:textColorHint="#9AA5B1"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="12dp"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <!-- Confirm Password Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textColor="#172B4D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="7dp" />
+
+            <!-- Confirm Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:background="@drawable/input_bg">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_lock"
+                    android:contentDescription="Confirm Password" />
+
+                <EditText
+                    android:id="@+id/etConfirmPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Re-enter password"
+                    android:textSize="15sp"
+                    android:textColor="#172B4D"
+                    android:textColorHint="#9AA5B1"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="12dp"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <!-- Reset Button -->
+            <Button
+                android:id="@+id/btnResetPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Reset Password  →"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/reset_button_bg"
+                android:layout_marginTop="25dp"
+                android:elevation="3dp" />
+
+        </LinearLayout>
+
+        <!-- Back -->
+        <TextView
+            android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←  Back to Login"
+            android:textColor="#BEC3C8"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp"
+            android:padding="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</ScrollView>

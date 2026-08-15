@@ -1,11 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:background="@color/white">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/ss_splash_bg"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="90dp"
+    android:paddingBottom="50dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/app_logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="@null" />
+
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="SanketSetu"
+        android:textColor="#5426A3"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Digital Indian Sign Language&#10;Communication Assistant"
+        android:textColor="#45455F"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+    <!-- Slogan -->
+    <TextView
+        android:id="@+id/tvSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Bridging Communication Beyond Words."
+        android:textColor="#7047B8"
+        android:fontFamily="cursive"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:gravity="center" />
+
+    <!-- Loading -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarLoading"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:indeterminateTint="#7047B8" />
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Loading..."
+            android:textColor="#7047B8"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

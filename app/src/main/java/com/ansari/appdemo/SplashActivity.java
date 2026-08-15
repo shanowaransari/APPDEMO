@@ -4,50 +4,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_TIME = 2500; // 2.5 seconds
+    private static final long SPLASH_DELAY_MS = 2000;
 
-    private Handler handler;
+    private ProgressBar progressBarLoading;
+    private TextView tvLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Splash screen ka XML
         setContentView(R.layout.activity_splash);
 
-        // Handler initialize
-        handler = new Handler(Looper.getMainLooper());
+        progressBarLoading = findViewById(R.id.progressBarLoading);
+        tvLoading = findViewById(R.id.tvLoading);
 
-        // Splash ke baad LoginActivity par jump
-        handler.postDelayed(new Runnable() {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                Intent intent = new Intent(
-                        SplashActivity.this,
-                        LoginActivity.class
-                );
-
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
-
-                // SplashActivity ko close kar do
                 finish();
             }
-        }, SPLASH_TIME);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        // Handler callback remove
-        if (handler != null) {
-            handler.removeCallbacksAndMessages(null);
-        }
+        }, SPLASH_DELAY_MS);
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="200dp"
+    android:viewportWidth="360"
+    android:viewportHeight="200">
+
+    <!-- Back wave - light blue -->
+    <path
+        android:fillColor="#BFD9F7"
+        android:pathData="M0,70
+                           C60,40 120,100 180,70
+                           C240,40 300,100 360,70
+                           L360,200 L0,200 Z" />
+
+    <!-- Middle wave - purple -->
+    <path
+        android:fillColor="#9B7FD4"
+        android:pathData="M0,110
+                           C70,80 130,140 200,105
+                           C260,75 310,130 360,100
+                           L360,200 L0,200 Z" />
+
+    <!-- Front wave - darker purple/blue -->
+    <path
+        android:fillColor="#5B3FA8"
+        android:pathData="M0,150
+                           C80,120 140,170 220,145
+                           C280,125 320,165 360,140
+                           L360,200 L0,200 Z" />
+
+</vector>

@@ -43,4 +43,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
-}
+    implementation("com.loopj.android:android-async-http:1.4.11")
+    implementation ("com.google.mediapipe:tasks-vision:latest.release")
+    implementation("com.android.volley:volley:1.2.1")
+    }

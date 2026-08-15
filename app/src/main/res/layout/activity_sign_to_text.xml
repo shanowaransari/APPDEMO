@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="30dp">
+
+        <!-- TITLE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign → Text"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- SUBTITLE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convert sign language into text"
+            android:textSize="16sp"
+            android:textColor="#777777"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- CAMERA IMAGE -->
+
+        <ImageView
+            android:id="@+id/imgCamera"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:src="@drawable/sign_not_found"
+            android:scaleType="centerInside"
+            android:background="#FFFFFF"
+            android:contentDescription="Camera preview"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CAMERA BUTTON -->
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="📷  OPEN CAMERA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#171733"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- RESULT TITLE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recognized Sign"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- RESULT -->
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN NOT FOUND"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- MEANING -->
+
+        <TextView
+            android:id="@+id/tvMeaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take a photo and select a supported sign."
+            android:textSize="15sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- DEMO SIGNS -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Supported Signs"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnHello"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="HELLO"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnThankYou"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="THANK YOU"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="HELP"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnWater"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="WATER"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnEmergency"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="EMERGENCY"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

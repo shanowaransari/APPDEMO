@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="30dp">
+
+        <!-- TITLE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text → Sign"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convert text into sign language"
+            android:textSize="15sp"
+            android:textColor="#777777"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"/>
+
+
+        <!-- INPUT -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your message"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:layout_marginBottom="8dp"/>
+
+
+        <EditText
+            android:id="@+id/etText"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Example: I LOVE YOU"
+            android:textColorHint="#999999"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="15dp"
+            android:background="@android:drawable/edit_text"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="14dp"/>
+
+
+        <!-- TRANSLATE -->
+
+        <Button
+            android:id="@+id/btnTranslate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="TRANSLATE TO SIGN"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#171733"
+            android:layout_marginBottom="24dp"/>
+
+
+        <!-- RESULT TITLE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Language Result"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+
+        <!-- SIGN IMAGE -->
+
+        <ImageView
+            android:id="@+id/imgSign"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/sign_not_found"
+            android:scaleType="centerInside"
+            android:background="#FFFFFF"
+            android:contentDescription="Sign language image"
+            android:layout_marginBottom="18dp"/>
+
+
+        <!-- RESULT -->
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN NOT AVAILABLE"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#171733"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+
+        <!-- MEANING -->
+
+        <TextView
+            android:id="@+id/tvMeaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter text and translate it."
+            android:textSize="15sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+
+        <!-- LISTEN -->
+
+        <Button
+            android:id="@+id/btnListen"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="🔊  LISTEN"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#5B4BFF"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,34 +1,68 @@
 package com.ansari.appdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
-    // Drawer
+    // =========================================================
+    // DRAWER
+    // =========================================================
+
     private DrawerLayout drawerLayout;
-    private LinearLayout navigationDrawer;
 
-    // Header
-    private ImageButton btnMenu, btnNotification;
 
-    // Quick Access Cards
-    private LinearLayout cardSignToText, cardTextToSign, cardVoiceToSign;
-    private LinearLayout cardEmergency, cardLearnISL, cardPractice;
+    // =========================================================
+    // HEADER
+    // =========================================================
 
-    // Bottom Navigation
-    private LinearLayout navHome, navLearn, navHistory, navProfile;
+    private ImageButton btnMenu;
+    private ImageButton btnNotification;
+
+
+    // =========================================================
+    // QUICK ACCESS
+    // =========================================================
+
+    private LinearLayout cardSignToText;
+    private LinearLayout cardTextToSign;
+    private LinearLayout cardVoiceToSign;
+    private LinearLayout cardEmergency;
+    private LinearLayout cardLearnISL;
+    private LinearLayout cardPractice;
+
+
+    // =========================================================
+    // BOTTOM NAVIGATION
+    // =========================================================
+
+    private LinearLayout navHome;
+    private LinearLayout navLearn;
+    private LinearLayout navHistory;
+    private LinearLayout navProfile;
+
     private ImageButton navScan;
 
-    // Learning Banner
+
+    // =========================================================
+    // LEARNING BANNER
+    // =========================================================
+
     private TextView btnLetsGo;
 
+
+    // =========================================================
+    // ON CREATE
+    // =========================================================
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +71,10 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         initViews();
+
         setClickListeners();
+
+        setupDrawerMenu();
     }
 
 
@@ -49,27 +86,21 @@ public class HomeActivity extends AppCompatActivity {
 
         // Drawer
         drawerLayout = findViewById(R.id.drawerLayout);
-        navigationDrawer = findViewById(R.id.navigationDrawer);
-
 
         // Header
         btnMenu = findViewById(R.id.btnMenu);
         btnNotification = findViewById(R.id.btnNotification);
 
-
-        // Quick Access Cards
+        // Quick Access
         cardSignToText = findViewById(R.id.cardSignToText);
         cardTextToSign = findViewById(R.id.cardTextToSign);
         cardVoiceToSign = findViewById(R.id.cardVoiceToSign);
-
         cardEmergency = findViewById(R.id.cardEmergency);
         cardLearnISL = findViewById(R.id.cardLearnISL);
         cardPractice = findViewById(R.id.cardPractice);
 
-
         // Learning Banner
         btnLetsGo = findViewById(R.id.btnLetsGo);
-
 
         // Bottom Navigation
         navHome = findViewById(R.id.navHome);
@@ -86,162 +117,109 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setClickListeners() {
 
-
-        // -----------------------------------------------------
-        // HAMBURGER MENU → OPEN DRAWER
-        // -----------------------------------------------------
+        // =====================================================
+        // MENU
+        // =====================================================
 
         btnMenu.setOnClickListener(v -> {
 
-            drawerLayout.openDrawer(navigationDrawer);
+            if (drawerLayout != null) {
 
+                drawerLayout.openDrawer(
+                        GravityCompat.START
+                );
+            }
         });
 
 
-        // -----------------------------------------------------
+        // =====================================================
         // NOTIFICATION
-        // -----------------------------------------------------
+        // =====================================================
 
         btnNotification.setOnClickListener(v -> {
 
             Toast.makeText(
                     HomeActivity.this,
-                    "Notifications",
+                    "No new notifications",
                     Toast.LENGTH_SHORT
             ).show();
-
         });
 
 
         // =====================================================
-        // DRAWER MENU
+        // SIGN TO TEXT
         // =====================================================
 
-        LinearLayout menuHome = findViewById(R.id.menuHome);
-        LinearLayout menuProfile = findViewById(R.id.menuProfile);
-        LinearLayout menuAbout = findViewById(R.id.menuAbout);
-        LinearLayout menuLogout = findViewById(R.id.menuLogout);
-
-
-        // Drawer → Home
-        menuHome.setOnClickListener(v -> {
-
-            drawerLayout.closeDrawer(navigationDrawer);
-
-            Toast.makeText(
-                    HomeActivity.this,
-                    "Home",
-                    Toast.LENGTH_SHORT
-            ).show();
-
-        });
-
-
-        // Drawer → My Profile
-        menuProfile.setOnClickListener(v -> {
-
-            drawerLayout.closeDrawer(navigationDrawer);
-
-            navigateToProfile();
-
-        });
-
-
-        // Drawer → About Us
-        menuAbout.setOnClickListener(v -> {
-
-            drawerLayout.closeDrawer(navigationDrawer);
-
-            Toast.makeText(
-                    HomeActivity.this,
-                    "About Us",
-                    Toast.LENGTH_SHORT
-            ).show();
-
-        });
-
-
-        // Drawer → Logout
-        menuLogout.setOnClickListener(v -> {
-
-            drawerLayout.closeDrawer(navigationDrawer);
-
-            Toast.makeText(
-                    HomeActivity.this,
-                    "Logout",
-                    Toast.LENGTH_SHORT
-            ).show();
-
-        });
-
-
-        // =====================================================
-        // QUICK ACCESS
-        // =====================================================
-
-
-        // Sign → Text
         cardSignToText.setOnClickListener(v -> {
 
-            navigateToSignToText();
-
+            openSignToText();
         });
 
 
-        // Text → Sign
+        // =====================================================
+        // TEXT TO SIGN
+        // =====================================================
+
         cardTextToSign.setOnClickListener(v -> {
 
-            navigateToTextToSign();
-
+            openTextToSign();
         });
 
 
-        // Voice → Sign
+        // =====================================================
+        // VOICE TO SIGN
+        // =====================================================
+
         cardVoiceToSign.setOnClickListener(v -> {
 
-            navigateToVoiceToSign();
-
+            openVoiceToSign();
         });
 
 
-        // Emergency
+        // =====================================================
+        // EMERGENCY
+        // =====================================================
+
         cardEmergency.setOnClickListener(v -> {
 
-            navigateToEmergency();
-
+            openEmergency();
         });
 
 
-        // Learn ISL
+        // =====================================================
+        // LEARN ISL
+        // =====================================================
+
         cardLearnISL.setOnClickListener(v -> {
 
-            navigateToLearnISL();
-
+            openLearnISL();
         });
 
 
-        // Practice
+        // =====================================================
+        // PRACTICE
+        // =====================================================
+
         cardPractice.setOnClickListener(v -> {
 
-            navigateToPractice();
-
+            openPractice();
         });
 
 
-        // Let's Go
+        // =====================================================
+        // LET'S GO
+        // =====================================================
+
         btnLetsGo.setOnClickListener(v -> {
 
-            navigateToLearnISL();
-
+            openLearnISL();
         });
 
 
         // =====================================================
-        // BOTTOM NAVIGATION
+        // BOTTOM HOME
         // =====================================================
 
-
-        // Home
         navHome.setOnClickListener(v -> {
 
             Toast.makeText(
@@ -249,166 +227,369 @@ public class HomeActivity extends AppCompatActivity {
                     "You are already on Home",
                     Toast.LENGTH_SHORT
             ).show();
-
         });
 
 
-        // Learn
+        // =====================================================
+        // BOTTOM LEARN
+        // =====================================================
+
         navLearn.setOnClickListener(v -> {
 
-            navigateToLearnISL();
-
+            openLearnISL();
         });
 
 
-        // Scan
+        // =====================================================
+        // BOTTOM SCAN
+        // =====================================================
+
         navScan.setOnClickListener(v -> {
 
-            navigateToSignToText();
-
+            openSignToText();
         });
 
 
-        // History
+        // =====================================================
+        // BOTTOM HISTORY
+        // =====================================================
+
         navHistory.setOnClickListener(v -> {
 
-            navigateToHistory();
-
+            openHistory();
         });
 
 
-        // Profile
+        // =====================================================
+        // BOTTOM PROFILE
+        // =====================================================
+
         navProfile.setOnClickListener(v -> {
 
-            navigateToProfile();
-
+            openProfile();
         });
-
     }
 
 
     // =========================================================
-    // NAVIGATION METHODS
+    // DRAWER MENU
     // =========================================================
 
+    private void setupDrawerMenu() {
 
-    private void navigateToSignToText() {
+        // =====================================================
+        // MY PROFILE
+        // =====================================================
 
-        Toast.makeText(
-                this,
-                "Opening Sign → Text",
-                Toast.LENGTH_SHORT
-        ).show();
+        TextView menuProfile =
+                findViewById(R.id.menuProfile);
 
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, SignToTextActivity.class);
-        // startActivity(intent);
+        if (menuProfile != null) {
 
+            menuProfile.setOnClickListener(v -> {
+
+                drawerLayout.closeDrawer(
+                        GravityCompat.START
+                );
+
+                openProfile();
+            });
+        }
+
+
+        // =====================================================
+        // NOTIFICATIONS
+        // =====================================================
+
+        TextView menuNotifications =
+                findViewById(R.id.menuNotifications);
+
+        if (menuNotifications != null) {
+
+            menuNotifications.setOnClickListener(v -> {
+
+                drawerLayout.closeDrawer(
+                        GravityCompat.START
+                );
+
+                Toast.makeText(
+                        HomeActivity.this,
+                        "Notifications",
+                        Toast.LENGTH_SHORT
+                ).show();
+            });
+        }
+
+
+        // =====================================================
+        // SETTINGS
+        // =====================================================
+
+        TextView menuSettings =
+                findViewById(R.id.menuSettings);
+
+        if (menuSettings != null) {
+
+            menuSettings.setOnClickListener(v -> {
+
+                drawerLayout.closeDrawer(
+                        GravityCompat.START
+                );
+
+                Toast.makeText(
+                        HomeActivity.this,
+                        "Settings",
+                        Toast.LENGTH_SHORT
+                ).show();
+            });
+        }
+
+
+        // =====================================================
+        // ABOUT
+        // =====================================================
+
+        TextView menuAbout =
+                findViewById(R.id.menuAbout);
+
+        if (menuAbout != null) {
+
+            menuAbout.setOnClickListener(v -> {
+
+                // Close drawer
+                drawerLayout.closeDrawer(
+                        GravityCompat.START
+                );
+
+                // Open About Us Activity
+                Intent intent = new Intent(
+                        HomeActivity.this,
+                        AboutUsActivity.class
+                );
+
+                startActivity(intent);
+            });
+        }
+
+
+        // =====================================================
+        // LOGOUT
+        // =====================================================
+
+        TextView menuLogout =
+                findViewById(R.id.menuLogout);
+
+        if (menuLogout != null) {
+
+            menuLogout.setOnClickListener(v -> {
+
+                showLogoutDialog();
+            });
+        }
     }
 
 
-    private void navigateToTextToSign() {
+    // =========================================================
+    // LOGOUT ALERT DIALOG
+    // =========================================================
 
-        Toast.makeText(
-                this,
-                "Opening Text → Sign",
-                Toast.LENGTH_SHORT
-        ).show();
+    private void showLogoutDialog() {
 
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, TextToSignActivity.class);
-        // startActivity(intent);
+        new AlertDialog.Builder(this)
 
+                .setTitle("Logout")
+
+                .setMessage(
+                        "Are you sure you want to logout?"
+                )
+
+                .setNegativeButton(
+                        "Cancel",
+                        (dialog, which) ->
+                                dialog.dismiss()
+                )
+
+                .setPositiveButton(
+                        "Logout",
+                        (dialog, which) ->
+                                performLogout()
+                )
+
+                .show();
     }
 
 
-    private void navigateToVoiceToSign() {
+    // =========================================================
+    // PERFORM LOGOUT
+    // =========================================================
+
+    private void performLogout() {
+
+        getSharedPreferences(
+                "SanketSetuPrefs",
+                MODE_PRIVATE
+        )
+                .edit()
+                .clear()
+                .apply();
 
         Toast.makeText(
                 this,
-                "Opening Voice → Sign",
+                "Logged out successfully",
                 Toast.LENGTH_SHORT
         ).show();
 
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, VoiceToSignActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(
+                HomeActivity.this,
+                LoginActivity.class
+        );
 
+        intent.setFlags(
+                Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TASK
+        );
+
+        startActivity(intent);
+
+        finish();
     }
 
 
-    private void navigateToEmergency() {
+    // =========================================================
+    // SIGN TO TEXT
+    // =========================================================
+
+    private void openSignToText() {
+
+        Intent intent = new Intent(
+                HomeActivity.this,
+                SignToTextActivity.class
+        );
+
+        startActivity(intent);
+    }
+
+
+    // =========================================================
+    // TEXT TO SIGN
+    // =========================================================
+
+    private void openTextToSign() {
+
+        Intent intent = new Intent(
+                HomeActivity.this,
+                TextToSignActivity.class
+        );
+
+        startActivity(intent);
+    }
+
+
+    // =========================================================
+    // VOICE TO SIGN
+    // =========================================================
+
+    private void openVoiceToSign() {
+
+        Intent intent = new Intent(
+                HomeActivity.this,
+                VoiceToSignActivity.class
+        );
+
+        startActivity(intent);
+    }
+
+
+    // =========================================================
+    // EMERGENCY
+    // =========================================================
+
+    private void openEmergency() {
 
         Toast.makeText(
                 this,
-                "Opening Emergency",
+                "Emergency",
                 Toast.LENGTH_SHORT
         ).show();
-
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, EmergencyActivity.class);
-        // startActivity(intent);
-
     }
 
 
-    private void navigateToLearnISL() {
+    // =========================================================
+    // LEARN ISL
+    // =========================================================
+
+    private void openLearnISL() {
 
         Toast.makeText(
                 this,
-                "Opening Learn ISL",
+                "Learn ISL",
                 Toast.LENGTH_SHORT
         ).show();
-
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, LearnISLActivity.class);
-        // startActivity(intent);
-
     }
 
 
-    private void navigateToPractice() {
+    // =========================================================
+    // PRACTICE
+    // =========================================================
+
+    private void openPractice() {
 
         Toast.makeText(
                 this,
-                "Opening Practice",
+                "Practice",
                 Toast.LENGTH_SHORT
         ).show();
-
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, PracticeActivity.class;
-        // startActivity(intent);
-
     }
 
 
-    private void navigateToHistory() {
+    // =========================================================
+    // HISTORY
+    // =========================================================
+
+    private void openHistory() {
 
         Toast.makeText(
                 this,
-                "Opening History",
+                "History",
                 Toast.LENGTH_SHORT
         ).show();
-
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, HistoryActivity.class);
-        // startActivity(intent);
-
     }
 
 
-    private void navigateToProfile() {
+    // =========================================================
+    // PROFILE
+    // =========================================================
 
-        Toast.makeText(
-                this,
-                "Opening Profile",
-                Toast.LENGTH_SHORT
-        ).show();
+    private void openProfile() {
 
-        // Later:
-        // Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(
+                HomeActivity.this,
+                ProfileActivity.class
+        );
 
+        startActivity(intent);
     }
 
+
+    // =========================================================
+    // BACK BUTTON
+    // =========================================================
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout != null
+                && drawerLayout.isDrawerOpen(
+                GravityCompat.START
+        )) {
+
+            drawerLayout.closeDrawer(
+                    GravityCompat.START
+            );
+
+        } else {
+
+            super.onBackPressed();
+        }
+    }
 }
